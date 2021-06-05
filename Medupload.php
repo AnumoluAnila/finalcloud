@@ -16,10 +16,16 @@ if(isset($_POST['add'])){
    // print_r($file);
 
       $insertquery="insert into medicine(mname,mtype,mcate,mqty,mmfg,mexp,price,mlink) values('$mname','$mtype','$mcate','$mqty','$mmfg','$mexp','$price','$mlink')";
-      $query=mysqli_query($con,$insertquery);
-
-      echo '<script>alert("successfull")</script>';
+      //$query=mysqli_query($con,$insertquery);
+    if (mysqli_query($conn, $insertquery)) {
+        echo "New record created successfully";
+        echo '<script>alert("successfull")</script>';
       echo "<script>location.href='addmedicine.php'</script>";
+    } else {
+        echo "Error: " . $insertquery . "<br>" . mysqli_error($conn);
+    }
+
+      
 
 
 }
