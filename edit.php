@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
     
     $query=mysqli_query($con,$upquery);
     echo '<script>alert("Medicine details updated successfully")</script>';
-      echo "<script>location.href='viewMedicine.php'</script>";
+      echo "<script>location.href='viewmedicine.php'</script>";
     
     
    
